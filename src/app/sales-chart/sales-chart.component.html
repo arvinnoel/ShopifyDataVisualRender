@@ -1,0 +1,24 @@
+<mat-form-field *ngIf="!loading">
+  <mat-label>Select Interval</mat-label>
+  <mat-select [(ngModel)]="selectedInterval" (selectionChange)="onIntervalChange()">
+    <mat-option *ngFor="let interval of intervals" [value]="interval">{{ interval }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field *ngIf="!loading && selectedInterval">
+  <mat-label>Select Year</mat-label>
+  <mat-select [(ngModel)]="selectedYear" (selectionChange)="onYearChange()">
+    <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- <mat-card >
+  <div>
+    <canvas id="salesChart" width="90%" height="60%"></canvas>
+  </div>
+</mat-card> -->
+<mat-card class="chart-container">
+  <div class="chart-wrapper">
+    <canvas id="salesChart"></canvas>
+  </div>
+</mat-card>

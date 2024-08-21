@@ -1,0 +1,14 @@
+<!-- customers-geo-map.component.html -->
+<mat-form-field *ngIf="!loading" class="year-select">
+  <mat-label>Select Year</mat-label>
+  <mat-select [(ngModel)]="selectedYear" (selectionChange)="onYearChange()">
+    <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Line Chart -->
+<mat-card class="chart-card">
+  <div class="chart-container">
+    <canvas id="lineChart"></canvas>
+  </div>
+</mat-card>

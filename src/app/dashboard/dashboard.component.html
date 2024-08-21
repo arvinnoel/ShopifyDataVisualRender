@@ -1,0 +1,183 @@
+<mat-card class="custom-card">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="toggleSidebar()" aria-label="Toggle sidebar">
+      <mat-icon [@menuAnimation]="sidebarOpen ? 'open' : 'close'">menu</mat-icon>
+    </button>
+    <span>Data visualization</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Favorite">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Share">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</mat-card>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+    <div class="custom-drawer">
+      <mat-card class="custom-card-sidebar">
+        <mat-nav-list>
+          <mat-list-item>
+            <a matLine routerLink="/sales-chart" class="custom-link">
+              Total Sales
+            </a>
+          </mat-list-item>
+          <mat-list-item>
+            <a matLine routerLink="/sales-growth" class="custom-link">
+              Sales Growth Rate 
+            </a>
+          </mat-list-item>
+          <mat-list-item>
+            <a matLine routerLink="/new-customers-chart" class="custom-link">
+              New Customers
+            </a>
+          </mat-list-item>
+          <mat-list-item>
+            <a matLine routerLink="/repeat-customers-purchase-chart" class="custom-link">
+              Repeated Customers
+            </a>
+          </mat-list-item>
+          <mat-list-item>
+            <a matLine routerLink="/customers-geo-map" class="custom-link">
+              Distribution of Customers
+            </a>
+          </mat-list-item>
+          <mat-list-item>
+            <a matLine routerLink="/customer-lifetime-value-chart" class="custom-link">
+              Customer Lifetime Value
+            </a>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-card>
+    </div>
+  </mat-drawer>
+  
+  <mat-drawer-content style="width: 100%; padding-left: 8px;">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<style>
+  .example-container {
+    width: 98vw;
+    height: 100vh;
+    display: flex;
+  }
+
+  .example-sidenav {
+    width: 300px;
+    background-color: #f5f5f5;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .example-sidenav-content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .example-toolbar {
+    background-color: #ffffff1c;
+  }
+
+  .example-spacer {
+    flex: 1;
+  }
+
+  .example-icon {
+    color: rgb(17, 16, 16);
+  }
+
+  .example-icon:hover {
+    transform: scale(1.2);
+  }
+
+  .example-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 12px 24px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .example-link:hover {
+    background-color: #e0e0e0;
+  }
+
+  .example-sidenav .mat-icon {
+    margin-right: 12px;
+    transition: margin-right 0.3s ease-in-out;
+  }
+
+  .example-sidenav .mat-icon:hover {
+    margin-right: 16px;
+  }
+
+  .custom-card {
+    padding: 20px;
+    background-color: bisque;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .custom-card-sidebar {
+    background-color: bisque;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 90vh;
+    width: 280px;
+  }
+
+  .custom-drawer {
+    padding: 10px;
+    height: -webkit-fill-available;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .center-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mat-nav-list {
+    padding: 0;
+  }
+
+  .mat-list-item {
+    padding: 10px 0;
+  }
+
+  .custom-link {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-link:hover {
+    background-color: #e0e0e0;
+  }
+
+  .custom-link:active {
+    background-color: #d0d0d0;
+  }
+</style>

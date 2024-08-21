@@ -1,0 +1,14 @@
+<mat-form-field *ngIf="!loading">
+  <mat-label>Select Interval</mat-label>
+  <mat-select [(ngModel)]="selectedInterval" (selectionChange)="onIntervalChange()">
+    <mat-option *ngFor="let interval of intervals" [value]="interval">{{ interval }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-card class="chart-container">
+  <div class="chart-wrapper">
+    <canvas id="doughnutChart"></canvas>
+  </div>
+</mat-card>
+
+ 

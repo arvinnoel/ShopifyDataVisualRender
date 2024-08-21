@@ -1,0 +1,21 @@
+.map-card {
+  width: 100%;
+  height: 500px; /* Increased height for a bigger map display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ensure the map fits within the container */
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
