@@ -3,5 +3,5 @@ services:
     name: Angular
     env: node
     buildCommand: 'npx ng build --configuration production'
-    startCommand: 'npx http-server dist/Angular'
+    startCommand: 'npx http-server dist/front-end'
     autoDeploy: true
