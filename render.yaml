@@ -1,7 +1,7 @@
 services:
   - type: web
-    name: angular-app
+    name: Angular
     env: node
-    buildCommand: 'npm run build -- --configuration production'
-    startCommand: 'npx serve -s dist/Angular'
+    buildCommand: 'ng build --configuration production'
+    startCommand: 'ng serve -s dist/front-end'
     autoDeploy: true
