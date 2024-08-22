@@ -16,9 +16,9 @@ export class DataService {
   private GeoAPI = 'https://api.opencagedata.com/geocode/v1/json?';
   private APIKey = 'eaa4a42a4ffb47b68082695fa220d609'; 
 
-  readonly APIUrl = "http://127.0.0.1:5000";
+  // readonly APIUrl = "http://127.0.0.1:5000";
   // readonly APIUrl = "http://0.0.0.0:8000";
-
+  readonly APIUrl = "https://flask-data-visual.onrender.com";
   constructor(private http: HttpClient) { }
 
   getSalesYear(groupBy: string): Observable<number[]> {
