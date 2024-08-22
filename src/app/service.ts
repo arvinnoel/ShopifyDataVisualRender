@@ -17,6 +17,7 @@ export class DataService {
   private APIKey = 'eaa4a42a4ffb47b68082695fa220d609'; 
 
   readonly APIUrl = "http://127.0.0.1:5000";
+  // readonly APIUrl = "http://0.0.0.0:8000";
 
   constructor(private http: HttpClient) { }
 
