@@ -2,6 +2,6 @@ services:
   - type: web
     name: Angular
     env: node
-    buildCommand: 'ng build --configuration production'
-    startCommand: 'npx http-server dist/fron-end'
+    buildCommand: 'npx ng build --configuration production'
+    startCommand: 'npx http-server dist/Angular'
     autoDeploy: true
